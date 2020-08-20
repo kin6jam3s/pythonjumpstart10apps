@@ -1,5 +1,5 @@
 """
-This is the Journal_main module
+This is the Journal_main module.
 """
 
 import os

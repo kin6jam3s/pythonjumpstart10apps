@@ -1,5 +1,9 @@
 print('1. About to import Personal_Journal')
+
+
 import Personal_Journal
+
+
 print('2. About to Personal_Journal')
 
 

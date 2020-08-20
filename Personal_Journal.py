@@ -47,7 +47,6 @@ def add_entry(data):
     # data.append(text)
 
 
-# main()
 print('__file__' + __file__)
 print('__name__' + __name__)
 
