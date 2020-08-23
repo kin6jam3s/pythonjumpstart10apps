@@ -1,6 +1,9 @@
 import requests
 import bs4
+import collections
 
+WeatherReport = collections.namedtuple('AnyName_weather',
+                                       'Location, cond, Temp, scale')
 
 def main():
     # print the header
@@ -21,6 +24,17 @@ def main():
         report[1]
 
     ))
+    print('------------------------------------')
+    print('----------Using Collection----------')
+    print('------------------------------------')
+    print('NamedTuple : The temperature in {} right now is {}{} and weather condition is {}'.format(
+        report.Location,
+        report.Temp,
+        report.scale,
+        report.cond
+
+    ))
+
     # print(report)
     # print(len(report))
     # display for the forecast
@@ -66,7 +80,9 @@ def get_weather_from_html(html):
     scale = cleanup_text(Scale)
 
     # print(Loc, cond, Temp, scale)
-    return (Loc, cond, Temp, scale)
+    # return (Loc, cond, Temp, scale)
+    report = WeatherReport(Location=Loc, cond=cond, Temp=Temp, scale=Scale)
+    return report
 
 
 def find_city_and_area_from_loc(loc: str):
