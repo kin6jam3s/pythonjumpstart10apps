@@ -1,7 +1,6 @@
 import os
 import platform
 import subprocess
-
 import cat_service
 
 
