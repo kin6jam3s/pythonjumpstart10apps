@@ -101,7 +101,7 @@ def get_weather_from_html(html):
     # return (Loc, cond, Temp, scale)
     # Assigning the value to collection.namedtuple to assign variable to Location = loc, etc
     rep = WeatherReports(Locations=Loc, cond=cond, Temp=Temp, scale=Scale)
-    print(type(rep))
+    # print(type(rep))
     return rep  # rep will be sent back and will be assign to variable named report
 
 
