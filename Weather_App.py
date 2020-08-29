@@ -121,9 +121,8 @@ def cleanup_text(text: str):
     # if not string return text
     if not text:
         return text
-
     # If text is string then strip space
-    text = text.strip()
+    text = text.strip()  # remove whitespace
     return text  # return without space
 
 
