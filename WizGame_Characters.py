@@ -29,6 +29,16 @@ class Wizard(Creature):  # For class name should start with CAPITAL letter
     #     return "Wizard: {} of level {}".format(
     #         self.name, self.level
     #     )
+    #
+    def __init__(self, name, level, super_power):  # initialise function variable
+        super().__init__(name, level)  # declare that it will use Creature parameter for name and level
+        self.super_power = super_power  # adding new modifier
+
+    def get_defensive_roll(self):
+        base_roll = super().get_defensive_roll()
+        power_modifier = 10 if self.super_power else 1
+        print('Wizard : {}'.format(self.name), base_roll * power_modifier)
+        return base_roll * power_modifier
 
     # Class Creature was called on Wizard class
     def attack(self, active_creature):

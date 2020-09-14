@@ -34,12 +34,12 @@ def game_loop():
         Creature('Tiger', 12),
         SmallAnimal('Bat', 3),
         Dragon('Dragon', 50, 75, True),
-        WizGame_Characters.Wizard('Evil Wizard', 1000),
+        WizGame_Characters.Wizard('Evil Wizard', 1000, False),
 
     ]
 
     # print(type(creatures))
-    hero = WizGame_Characters.Wizard('Red Red', 75)
+    hero = WizGame_Characters.Wizard('Red Red', 75, True)
 
     # print(hero)
     # This is for initializing the value of cmd | should be not empty
