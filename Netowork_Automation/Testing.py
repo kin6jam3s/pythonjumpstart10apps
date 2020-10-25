@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+
 import netmiko
 import time
+
 
 def main():
     print_header()
@@ -22,7 +25,15 @@ def access_device():
 
     print('...Connecting to device')
     arista = netmiko.ConnectHandler(device_type='arista_eos', ip=device, username=username, password=password)
-    print('...Checkout is starting...')
+    Cisco = netmiko.ConnectHandler(device_type='cisco_nxos', ip=device, username=username, password=password)
+
+
+    prompt = arista.find_prompt()
+    dname = prompt.replace(">", " ")
+    print(dname)
+    print('Connected to {} '.format(prompt))
+
+    print('...Initiating Checkout in 5sec...')
     time.sleep(5)
     print('======Interface status======')
     intstat = arista.send_command('show interface {} | in Et|Desc|input'.format(interface))

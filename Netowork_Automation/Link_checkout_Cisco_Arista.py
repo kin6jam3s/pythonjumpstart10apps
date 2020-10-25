@@ -17,10 +17,6 @@ def print_header():
 
 
 def access_device():
-    # username and password can be modified
-    # username = 'admin'
-    # password = 'admin'
-
     device = input('Enter device IP: ')
     interface = input('Enter interface(ex.Et1): ')
     # peer_ip = input('Enter Peer IP: ')
@@ -67,11 +63,3 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-
-    # print('...Connecting to device')
-    # arista = netmiko.ConnectHandler(device_type='arista_eos', ip=device, username=username, password=password)
-    # Cisco = netmiko.ConnectHandler(device_type='cisco_nxos', ip=device, username=username, password=password)
