@@ -24,8 +24,11 @@ def access_device():
     os = osversion.lower().strip()
 
     now = datetime.datetime.now()
+    print('')
     print('Start time', now)
+    print('')
 
+    # Device information
     cisco = {'device_type': 'cisco_nxos',
              'ip': device,
              'username':'admin1',
@@ -54,7 +57,7 @@ def access_device():
     elif os == 'x' and os:
         print('exit')
 
-    print('Good Bye')
+    print('...session closed')
 
 
 if __name__ == "__main__":
