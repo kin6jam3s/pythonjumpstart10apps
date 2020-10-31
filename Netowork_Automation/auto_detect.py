@@ -56,8 +56,8 @@ def access_device(ipaddress, username, password):
     try:
         netconnect = SSHDetect(**remote_device)
         match = netconnect.autodetect()
-        print('...Checking device type..')
-        print('Device type: {}'.format(match))
+        rprint('...Checking device type..')
+        rprint('Device type: {}'.format(match))
         print('')
         remote_device['device_type'] = match
         return remote_device
