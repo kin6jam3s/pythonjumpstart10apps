@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
 from netmiko.ssh_autodetect import SSHDetect
+from netmiko.ssh_exception import NetMikoTimeoutException
+from paramiko.ssh_exception import SSHException
+from netmiko.ssh_exception import AuthenticationException
+
 import netmiko
+import os
 import datetime
 import getpass
 from rich import print as rprint
@@ -36,19 +41,37 @@ def access_device(ipaddress, username, password):
     rprint('[red]Start time[red]', now)
     print('')
 
+    rprint('[green]Checking connectiong to {}[green]'.format(ipaddress))
+    response = os.system('ping -c1 {}'.format(ipaddress))
+    if response == 0:
+        rprint('[cyan]...DEVICE IS ACTIVE[cyan]')
+    else:
+        rprint('[red]...DEVICE IS DOWN [red]')
+
     remote_device = {'device_type': 'autodetect',
                      'ip': ipaddress,
                      'username': username,
                      'password': password
                      }
+    try:
+        netconnect = SSHDetect(**remote_device)
+        match = netconnect.autodetect()
+        print('...Checking device type..')
+        print('Device type: {}'.format(match))
+        print('')
+        remote_device['device_type'] = match
+        return remote_device
 
-    netconnect = SSHDetect(**remote_device)
-    match = netconnect.autodetect()
-    print('...Checking device type..')
-    print('Device type: {}'.format(match))
-    print('')
-    remote_device['device_type'] = match
-    return remote_device
+    except (NetMikoTimeoutException, SSHException, AuthenticationException):
+        rprint('[red]######CHECK DEVICE IP OR YOU PASSWORD######[red]')
+
+    # netconnect = SSHDetect(**remote_device)
+    # match = netconnect.autodetect()
+    # print('...Checking device type..')
+    # print('Device type: {}'.format(match))
+    # print('')
+    # remote_device['device_type'] = match
+    # return remote_device
 
 
 def get_output(interface, remote_device, peer_ip):
