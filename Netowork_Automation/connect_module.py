@@ -22,7 +22,7 @@ def connect_to_device(remote_device, interface, peer_ip):
         output = netconnect.send_command('show interface {}'.format(interface))
         rprint(output)
         rprint('======================')
-        rprint('..Disconnecting to {} '.format(device_name))
+        rprint('[red]..Disconnecting to {} [red]'.format(device_name))
         netconnect.disconnect()
     else:
         print('Exit..')
