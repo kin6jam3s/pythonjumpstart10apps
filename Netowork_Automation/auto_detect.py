@@ -41,7 +41,7 @@ def access_device(ipaddress, username, password):
     rprint('[red]Start time[red]', now)
     print('')
 
-    rprint('[green]Checking connectiong to {}[green]'.format(ipaddress))
+    rprint('[green]Checking connection to {}[green]'.format(ipaddress))
     response = os.system('ping -c1 {}'.format(ipaddress))
     if response == 0:
         rprint('[cyan]...DEVICE IS ACTIVE[cyan]')
