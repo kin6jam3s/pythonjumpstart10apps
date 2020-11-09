@@ -27,10 +27,10 @@ def print_header():
 
 
 def user_input():
-    # ip_name = input('Device: ')
-    # interface = input('interface: ')
-    ip_name = sys.argv[1]
-    interface = sys.argv[2]
+    ip_name = input('Device: ')
+    interface = input('interface: ')
+    # ip_name = sys.argv[1]
+    # interface = sys.argv[2]
     print(ip_name, interface)
     return ip_name, interface
 
