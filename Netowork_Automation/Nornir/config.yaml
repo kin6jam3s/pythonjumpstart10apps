@@ -6,8 +6,8 @@ inventory:
     plugin: nornir.plugins.inventory.simple.SimpleInventory
     options:
         host_file: "/Users/ronelordonio/dciv2-code/mypython/pythonjumpstart10apps/Netowork_Automation/Nornir
-hosts.yaml"
+/hosts.yaml"
         group_file: "/Users/ronelordonio/dciv2-code/mypython/pythonjumpstart10apps/Netowork_Automation/Nornir
-groups.yaml"
+/groups.yaml"
         default_file: "/Users/ronelordonio/dciv2-code/mypython/pythonjumpstart10apps/Netowork_Automation/Nornir
-defaults.yaml"
+/defaults.yaml"
