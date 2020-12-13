@@ -1,0 +1,26 @@
+---
+S1:
+    hostname: 192.168.1.109
+    platform: 'ios'
+    username: admin
+    password: eve
+    group:
+        - cisco_group
+
+
+S2:
+    hostname: 192.168.1.110
+    platform: 'ios'
+    username: admin
+    password: eve
+    group:
+        - cisco_group
+
+
+S3:
+    hostname: 192.168.1.111
+    platform: 'ios'
+    username: admin
+    password: eve
+    group:
+        - cisco_group
