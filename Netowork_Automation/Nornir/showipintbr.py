@@ -1,6 +1,6 @@
 from nornir import InitNornir
 from nornir_scrapli.task import send_command
-from nornir_utils.plugins.functions import print_result
+from nornir.plugins.functions import print_result
 
 
 nr = InitNornir(config_file="config.yaml")
