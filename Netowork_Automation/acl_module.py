@@ -50,7 +50,7 @@ def acl_grab(arista):
     # for i in uniq:
     #     out1 = netconnect.send_command('sh run | sec {}'.format(i))
     #     print(out1)
-    # netconnect.disconnect()
+    netconnect.disconnect()
 
 
 

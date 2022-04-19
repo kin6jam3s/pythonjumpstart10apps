@@ -6,25 +6,27 @@ from acl_module import acl_grab
 from prefix_module import prf_grab
 from RM_module import rm_grab
 from config_gen_module import config_gen
+from int_clean_module import int_grab
 import getpass
 
 
 def main():
 
     print_header()
-    arista, device = user_input()
+    arista = user_input()
     # print(arista)
     acl_return = acl_test(arista)
     prfx_return = prefix_test(arista)
     rm_return = rm_test(arista)
-    config_test(arista, acl_return, prfx_return, rm_return, device)
+    int_return = int_test(arista)
+    config_test(arista, acl_return, prfx_return, rm_return, int_return)
 
 
 
 def print_header():
-    print('###########################')
-    print('#######   TESTING  ########')
-    print('###########################')
+    print('########################################')
+    print('#######   CONFIG CLEAN-UP TOOL  ########')
+    print('########################################')
 
 
 def user_input():
@@ -40,7 +42,7 @@ def user_input():
               'secret': p
               }
 
-    return arista, device
+    return arista
 
 
 def acl_test(arista):
@@ -64,8 +66,15 @@ def rm_test(arista):
     return rm_return
 
 
-def config_test(arista, acl_return, prfx_return, rm_return, device):
-     config_gen(arista, acl_return, prfx_return, rm_return, device)
+def int_test(arista):
+    int_return = int_grab(arista)
+    print('BELOW')
+    print(int_return)
+    return int_return
+
+
+def config_test(arista, acl_return, prfx_return, rm_return, int_return):
+     config_gen(arista, acl_return, prfx_return, rm_return, int_return)
 
 
 if __name__ == "__main__":

@@ -40,13 +40,12 @@ def rm_grab(arista):
         p = re.search(r'\sin|out$', out2)
         #print(p)
         if p:
-            print("{} match --> matchObj.group() : ".format(i), p.group())
+            #print("{} match --> matchObj.group() : ".format(i), p.group())
             pass
         else:
             #print("No match!!")
             x.append(i)
 
     return x
-
 
     netconnect.disconnect()
