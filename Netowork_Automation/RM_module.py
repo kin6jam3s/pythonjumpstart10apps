@@ -4,7 +4,6 @@ from collections import Counter
 
 
 def rm_grab(arista):
-
     netconnect = ConnectHandler(**arista)
     netconnect.enable()
     prompt = netconnect.find_prompt()
