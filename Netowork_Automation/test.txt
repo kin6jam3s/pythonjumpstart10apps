@@ -1,6 +1,7 @@
-PING 192.168.1.1 (192.168.1.1): 56 data bytes
-64 bytes from 192.168.1.1: icmp_seq=0 ttl=63 time=2.318 ms
-
---- 192.168.1.1 ping statistics ---
-1 packets transmitted, 1 packets received, 0.00% packet loss
-round-trip min/avg/max = 2.318/2.318/2.318 ms
+RM_MAP_1 permit 10
+RM_MAP_1 permit 20
+RM_MAP_1 permit 30
+RM_MAP_2 permit 10
+RM_MAP_2 deny 20
+RM_MAP_1 in
+RM_MAP_1 out
