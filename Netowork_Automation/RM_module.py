@@ -46,6 +46,21 @@ def rm_grab(arista):
             #print("No match!!")
             x.append(i)
 
-    return x
+    # return x
+    print(x)
+
+    new_x = []
+    for i in x:
+        out3 = netconnect.send_command('sh run | in {}'.format(i))
+        p = re.search(r'redistribute', out3)
+        print(p)
+        if p:
+            #print("{} match --> matchObj.group() : ".format(i), p.group())
+            pass
+        else:
+            #print("No match!!")
+            new_x.append(i)
+    print(new_x)
+    return new_x
 
     netconnect.disconnect()
